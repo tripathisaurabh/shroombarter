@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-n(ig@+s_ck-zpeovnb4v&82^4sb@1n)-1(4kvdpa-6$*yh%3v*'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -105,11 +105,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Add STATIC_ROOT to define where collected static files should go
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # During development, ensure the files are served correctly
-if DEBUG:
-    STATICFILES_DIRS = [BASE_DIR / 'static']
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Media files configuration
 MEDIA_URL = '/media/'
@@ -134,11 +134,3 @@ CKEDITOR_CONFIGS = {
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'tripathisaurabh332@gmail.com'
-EMAIL_HOST_PASSWORD = 'SAUrabh2003@'
-DEFAULT_FROM_EMAIL = 'tripathisaurabh332@gmail.com'
