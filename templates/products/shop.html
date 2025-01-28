@@ -1,0 +1,172 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="coming-soon-container">
+    <div class="coming-soon-content">
+        <h1>Our Shop is Coming Soon!</h1>
+        <p>We are working hard to bring you the best products. Stay tuned for updates!</p>
+        <div class="coming-soon-image">
+            <img src="{% static 'images/coming-soon.png' %}" alt="Shop Coming Soon">
+        </div>
+       <!-- your_template.html -->
+
+<div class="cta-section">
+    {% if thank_you %}
+        <p>Thank you for signing up! We'll notify you when we launch.</p>
+    {% elif duplicate_message %}
+        <p>You have already signed up. Stay tuned for updates!</p>
+    {% else %}
+        <p>Sign up below to get notified when we launch:</p>
+        <form action="{% url 'shop' %}" method="POST" class="email-signup-form">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit" class="submit-btn">Notify Me</button>
+        </form>
+    {% endif %}
+</div>
+
+    </div>
+</div>
+
+
+{% block extra_css %}
+<style>
+/* General styling for the coming soon container */
+.coming-soon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+    padding-top: 60px; /* Add space for the navbar on mobile */
+}
+
+/* Styling for the content inside the container */
+.coming-soon-content {
+    text-align: center;
+    max-width: 600px; /* Reduce width for better control */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: auto;
+}
+
+/* Heading styling */
+.coming-soon-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Paragraph styling */
+.coming-soon-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Styling for the image */
+.coming-soon-image img {
+    max-width: 100%; /* Ensures the image takes the full width of the container */
+    height: auto; /* Keeps the aspect ratio intact */
+    object-fit: contain; /* Prevents the image from stretching */
+    margin-bottom: 20px; /* Adds space below the image */
+}
+
+/* Call-to-action section */
+.cta-section {
+    margin-top: 20px;
+}
+
+/* Email input field */
+.email-signup-form input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #8B4513; /* Brown color for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.submit-btn:hover {
+    background-color: #A0522D; /* Darker brown on hover */
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 767px) {
+    /* Adjust container padding */
+    .coming-soon-container {
+        padding: 10px;
+        padding-top: 80px; /* Increased padding to avoid navbar overlap */
+    }
+
+    /* Adjust heading size for mobile */
+    .coming-soon-content h1 {
+        font-size: 28px;
+    }
+
+    /* Adjust paragraph size for mobile */
+    .coming-soon-content p {
+        font-size: 16px;
+    }
+
+    /* Make the image slightly smaller on mobile */
+    .coming-soon-image img {
+        max-height: 300px;
+        margin-bottom: 15px;
+    }
+
+    /* Adjust the email input and button width */
+    .email-signup-form input,
+    .submit-btn {
+        width: 100%;
+    }
+}
+
+/* Large screen adjustments (for desktops or larger displays) */
+@media screen and (min-width: 1024px) {
+    /* Adjust container for larger screens */
+    .coming-soon-content {
+        max-width: 500px; /* Smaller card on larger screens */
+        padding: 30px;
+    }
+
+    /* Adjust heading size */
+    .coming-soon-content h1 {
+        font-size: 32px;
+    }
+
+    /* Adjust paragraph size */
+    .coming-soon-content p {
+        font-size: 18px;
+    }
+
+    /* Adjust form input and button padding */
+    .email-signup-form input,
+    .submit-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+</style>
+{% endblock %}
+
+{% endblock %}

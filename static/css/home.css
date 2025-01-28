@@ -1,0 +1,566 @@
+/* Existing Styles */
+body {
+  padding-top: 54px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #4e3914;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 80px;
+  }
+}
+
+a.btn-primary,
+button.btn-primary,
+a.btn-secondary,
+button.btn-secondary {
+  background-color: #8B4513;
+  border-color: #8B4513;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+a.btn-primary:hover,
+button.btn-primary:hover,
+a.btn-secondary:hover,
+button.btn-secondary:hover {
+  background-color: #8B4513;
+  border-color: #8B4513;
+}
+
+/* Slider Styles */
+.slider-main .carousel .carousel-inner .carousel-item:before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  height: 88vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  background-size: cover;
+}
+
+.services-bar h1 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.services-bar .card {
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.services-bar .card h4.card-header {
+  background-color: #4e3914;
+  color: #8B4513;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.services-bar .card .card-footer {
+  background-color: #4e3914;
+}
+
+/* About Section */
+.about-main {
+  padding: 30px 200px;
+  text-align: justify;
+}
+
+.about-main h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-main h5 {
+  font-size: 18px;
+}
+
+.about-main p {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.about-main ul {
+  padding-left: 20px;
+}
+
+.about-main ul li {
+  position: relative;
+  font-weight: 300;
+  list-style: none;
+  line-height: 29px;
+}
+
+.about-main ul li:before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: -15px;
+  top: 0;
+  color: #8B4513;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .about-main h2 {
+    font-size: 22px;
+  }
+
+  .about-main h5 {
+    font-size: 16px;
+  }
+
+  .about-main ul li {
+    line-height: 24px;
+  }
+}
+
+/* Image styling for better responsiveness */
+.about-main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Center align the title and button */
+.about-main .row .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.read-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #8B4513;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.read-more-button:hover {
+  background-color: #6E321F;
+  cursor: pointer;
+}
+
+/* Products Section */
+#products,
+#latest-blogs,
+#educational {
+  background-color: #fafafa;
+  padding: 40px 0;
+}
+
+#products h2,
+#latest-blogs h2,
+#educational h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Product List Flexbox */
+#products .product-list,
+#latest-blogs .product-list,
+#educational .educational-list {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap; /* Make sure items wrap on smaller screens */
+}
+
+/* Generic Card Styling */
+.product-card,
+.educational-item,
+.mushroom-card {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 250px; /* Max width for the card */
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.product-card img,
+.educational-item img,
+.mushroom-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Handle Long Descriptions */
+.product-card p,
+.mushroom-card p,
+.educational-item p {
+  max-height: 80px; /* Limit height */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis at the end */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.product-card button,
+.mushroom-card button {
+  background-color: #8B4513;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.product-card button:hover,
+.mushroom-card button:hover {
+  background-color: #45a049;
+}
+
+/* Educational Section (Flexible Card Layout) */
+#educational .educational-item {
+  background-color: #fff;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#educational h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#educational .educational-item p {
+  color: #666;
+}
+
+/* Responsive card layout */
+@media (max-width: 768px) {
+  .product-card,
+  .mushroom-card,
+  .educational-item {
+    width: 100%; /* Ensure cards take full width on smaller screens */
+    max-width: 100%;
+  }
+}
+/* About Section */
+.about-main {
+  padding: 30px 200px;
+  text-align: justify;
+  background-color: #fafafa;
+}
+
+.about-main h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-main h5 {
+  font-size: 18px;
+  text-align: center;
+}
+
+.about-main p {
+  font-size: 14px;
+  text-transform: capitalize;
+  text-align: justify;
+}
+
+.about-main ul {
+  padding-left: 20px;
+}
+
+.about-main ul li {
+  position: relative;
+  font-weight: 300;
+  list-style: none;
+  line-height: 29px;
+}
+
+.about-main ul li:before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: -15px;
+  top: 0;
+  color: #8B4513;
+}
+
+/* Handle Long Descriptions in About Section */
+.about-main p {
+  max-height: 80px; /* Limit height */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis at the end */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+.about-main .row .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Image styling for better responsiveness */
+.about-main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Button styling */
+.read-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #8B4513;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.read-more-button:hover {
+  background-color: #6E321F;
+  cursor: pointer;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-main h2 {
+    font-size: 22px;
+  }
+
+  .about-main h5 {
+    font-size: 16px;
+  }
+
+  .about-main ul li {
+    line-height: 24px;
+  }
+
+  .about-main {
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 768px) {
+  .about-main .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .about-main .col-lg-6 {
+      width: 100%; /* Ensure the columns stack vertically */
+      text-align: center; /* Center the text and button */
+  }
+
+  .about-main img {
+      width: 100%; /* Make the image responsive */
+      height: auto; /* Ensure the aspect ratio is maintained */
+      margin-top: 15px; /* Add some spacing between the text and the image */
+  }
+
+  .about-main a {
+      margin-top: 10px; /* Space between the button and the text */
+  }
+}
+/* Carousel Caption Styles */
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6); /* Darker background for better contrast */
+  color: white; /* Ensure text is white */
+  z-index: 2;
+  text-align: center;
+}
+
+/* Carousel Caption Heading and Text for Mobile */
+@media (max-width: 768px) {
+  .carousel-caption {
+      background: rgba(0, 0, 0, 0.7); /* Increase opacity for better readability */
+  }
+  .carousel-caption h3 {
+      font-size: 1.5rem;
+  }
+  .carousel-caption p {
+      font-size: 1rem;
+  }
+}
+
+.carousel-item {
+  background-size: cover !important; /* Ensure the image always covers the area */
+  background-position: center center !important; /* Center the background image */
+  min-height: 300px; /* Ensure minimum height */
+}
+.carousel-caption h3 {
+  font-size: 1.5rem; /* Adjust the title font size */
+}
+
+.carousel-caption p {
+  font-size: 1rem; /* Adjust the description font size */
+}
+@media (max-width: 768px) {
+  .about-main .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .about-main .col-lg-6 {
+      width: 100%; /* Ensure columns stack vertically */
+      text-align: center; /* Center the text and button */
+  }
+
+  .about-main img {
+      width: 100%; /* Make the image responsive */
+      height: auto; /* Ensure the aspect ratio is maintained */
+      margin-top: 15px; /* Add spacing between the text and the image */
+  }
+
+  .about-main a {
+      margin-top: 10px; /* Add space between button and text */
+  }
+}
+.read-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #8B4513;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  margin-left: 0; /* Ensure it doesn't get pushed off-screen */
+}
+
+.read-more-button:hover {
+  background-color: #6E321F;
+  cursor: pointer;
+}
+
+/* Gradient background for the entire section */
+.gradient-bg {
+  background: linear-gradient(120deg, #8e44ad, #3498db);
+  padding: 50px 0;
+  border-radius: 10px;
+}
+
+/* Section title styling */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Blog list layout */
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Individual blog card styling */
+.blog-card {
+  width: 100%;
+  max-width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Blog image styling */
+.blog-image-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+.blog-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-image:hover {
+  transform: scale(1.1);
+}
+
+/* Blog content styling */
+.blog-content {
+  padding: 20px;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.blog-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.learn-more-btn {
+  display: inline-block;
+  background-color: #8e44ad;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #732d91;
+}

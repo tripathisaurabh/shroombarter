@@ -1,0 +1,50 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<section id="blog-detail" class="section-container">
+    <div class="container">
+        <article class="blog-detail-card">
+            <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-detail-image">
+            <div class="blog-detail-content">
+                <h1 class="blog-title">{{ blog.title }}</h1>
+                <p class="blog-description">{{ blog.description|safe|linebreaks }}</p>
+            </div>
+        </article>
+    </div>
+</section>
+
+{% block extra_css %}
+    <style>
+        .blog-detail-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #blog-detail {
+            padding-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-detail-image {
+                max-width: 100%;
+            }
+
+            #blog-detail {
+                padding-top: 80px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .blog-detail-image {
+                max-width: 500px;
+            }
+        }
+    </style>
+{% endblock %}
+{% endblock %}

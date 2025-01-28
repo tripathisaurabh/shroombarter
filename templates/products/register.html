@@ -1,0 +1,33 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 100px); padding: 20px; box-sizing: border-box; padding-top: 70px;">
+    <h1 style="font-size: 3rem; color: #333; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); margin: 0;">
+        Register
+    </h1>
+    <form method="post" style="margin-top: 20px; width: 100%; max-width: 400px;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% block extra_css %}
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h1 {
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Add top margin for smaller screens if necessary */
+    @media screen and (max-width: 768px) {
+        div[style] {
+            padding-top: 80px; /* Adjust this value as per your navbar height */
+        }
+    }
+</style>
+{% endblock %}
+{% endblock %}

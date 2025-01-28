@@ -1,0 +1,15 @@
+form .form-control {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form .btn-primary {
+    background-color: #8B4513;
+    border-color: #8B4513;
+}
+
+form .btn-primary:hover {
+    background-color: #5A2C00;
+    border-color: #5A2C00;
+}

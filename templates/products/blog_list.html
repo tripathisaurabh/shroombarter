@@ -1,0 +1,117 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<section id="blogs" class="section-container">
+    <div class="container">
+        <h2 class="section-title">Latest Blogs</h2>
+
+        <div class="blog-list">
+            {% for mushroom in mushrooms %}
+                <article class="blog-card">
+                    <img src="{{ mushroom.image.url }}" alt="{{ mushroom.title }}" class="blog-image">
+                    <div class="blog-content">
+                        <h3 class="blog-title">{{ mushroom.title }}</h3>
+                        <p class="blog-description">
+                            {{ mushroom.description|truncatechars:100|striptags }}
+                        </p>
+                        <a href="{% url 'blog_detail' mushroom.id %}" class="learn-more-btn"><button>Learn More</button></a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% block extra_css %}
+<style>
+#blogs {
+    padding: 100px 0 40px; /* Top padding to avoid navbar overlap */
+    scroll-margin-top: 100px; /* For smooth scrolling if using anchor links */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.blog-card {
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 20px;
+}
+
+.blog-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.blog-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: #8B4513;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+}
+
+.learn-more-btn button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+}
+
+.learn-more-btn:hover {
+    background-color: #7a3f10;
+}
+
+@media (max-width: 768px) {
+    .blog-list {
+        justify-content: center;
+    }
+
+    .blog-card {
+        width: 100%;
+    }
+}
+</style>
+
+{% endblock %}
+{% endblock %}

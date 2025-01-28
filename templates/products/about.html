@@ -1,0 +1,29 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+<div class="about-banner" style="position: relative; width: 100%; height: 300px; overflow: hidden;">
+
+        <img 
+            src="{{ about.banner_image.url }}" 
+            alt="About Banner" 
+            style="width: 100%; height: 300px; object-fit: cover;" 
+        />
+
+
+    <!-- <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center;">
+        <h1 style="font-size: 48px; color:black; font-weight: bold; margin: 0;">About</h1>
+    </div> -->
+</div>
+<div class="about-main">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>{{ about.title }}</h2>
+            <p>{{ about.description|safe }}</p>
+
+        </div>
+        <div class="col-lg-6">
+            <img class="img-fluid rounded" src="{{ about.image.url }}" alt="{{ about.title }}" />
+        </div>
+    </div>
+</div>
+{% endblock %}
