@@ -13,8 +13,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['shroom-barter-z5yv4.ondigitalocean.app','shroombarter.com','www.shroombarter.com']
-
+ALLOWED_HOSTS = ['shroom-barter-z5yv4.ondigitalocean.app', 'shroombarter.com', 'www.shroombarter.com']
 
 # Application definition
 
@@ -70,7 +69,7 @@ db_info = urlparse(DATABASE_URL)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'db',
+        'NAME': 'db',
         'USER': db_info.username,
         'PASSWORD': db_info.password,
         'HOST': db_info.hostname,
@@ -117,16 +116,17 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # During development, ensure the files are served correctly
-
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Media files configuration
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Make sure to adjust these based on your server/hosting setup
 
-MEDIA_URL = 'http://143.110.243.77/media/'
+# For DigitalOcean Spaces or a similar external storage service, you would modify this as follows:
+MEDIA_URL = 'https://your-media-url.com/media/'  # Replace with the actual media URL
 MEDIA_ROOT = '/var/www/media'
 
+# If you want to store media locally, ensure that MEDIA_ROOT points to the local directory where files should be stored
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Uncomment if using local media storage
 
 # Email settings (using local SMTP server for development)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
