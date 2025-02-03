@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['shroom-barter-z5yv4.ondigitalocean.app']
+ALLOWED_HOSTS = ['shroom-barter-z5yv4.ondigitalocean.app','shroombarter.com','www.shroombarter.com']
 
 
 # Application definition
@@ -121,8 +121,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Media files configuration
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = 'http://143.110.243.77/media/'
+MEDIA_ROOT = '/var/www/media'
+
 
 # Email settings (using local SMTP server for development)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
