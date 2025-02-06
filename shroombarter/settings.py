@@ -59,15 +59,19 @@ WSGI_APPLICATION = 'shroombarter.wsgi.application'
 from urllib.parse import urlparse
 DATABASE_URL = os.environ.get('DATABASE_URL')
 db_info = urlparse(DATABASE_URL)
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shroomdb',
-        'USER': 'admin_saur',
-        'PASSWORD': 'SAUrabh7890@',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.getenv('DB_NAME', 'yourdbname'),  # Use environment variables here
+        'USER': os.getenv('DB_USER', 'yourdbuser'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'yourpassword'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
